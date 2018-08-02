@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_lay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    android:layout_above="@+id/footer_lay"
+    app:layout_scrollFlags="scroll|enterAlways">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@android:color/transparent">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/header_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:paddingBottom="150dp"
+                android:src="@drawable/no_img"
+                app:layout_collapseMode="parallax"/>
+
+
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_alignBottom="@+id/header_image"
+                app:layout_anchorGravity="bottom|right|end"
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:id="@+id/collapsing_toolbar_recycler_view_item"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:background="@color/white"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/header_title"
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="18sp"
+                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:src="@android:drawable/btn_star"
+                            android:padding="5dp"
+                            android:layout_height="30dp" />
+                        <TextView
+                            android:id="@+id/star_and_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/light_gray"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:padding="5dp"
+                            android:src="@drawable/phone_call"
+                            android:layout_height="25dp" />
+                        <TextView
+                            android:id="@+id/ph_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/light_gray"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/book_border"
+                        android:text="@string/book_table"/>
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            </RelativeLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/item_recycler_view"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_below="@+id/image"
+        />
+    <LinearLayout
+        android:id="@+id/menu_lay"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        app:layout_anchor="@id/item_recycler_view"
+        android:background="@drawable/add_btn_border"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        app:layout_anchorGravity="center|bottom"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="20dp"
+            android:src="@drawable/plate_fork_and_knife"
+            android:layout_height="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/menu"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/dark_gray"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <include layout="@layout/item_header_dialog" />
+
+</android.support.design.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:id="@+id/footer_lay"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+        <include layout="@layout/footer_layout"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

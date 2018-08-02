@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Test Application</string>
+    <string name="order_title">My Cart</string>
+    <string name="book_table">BOOK A TABLE</string>
+    <string name="menu">MENU</string>
+    <string name="view_cart">VIEW CART(5 ITEMS)</string>
+    <string name="total_cost">Total Cost</string>
+    <string name="review_order_header">Review Orders</string>
+    <string name="no_net">No Internet connection found on your Device. connect to a Wi-Fi or Mobile network.</string>
+    <string name="no_server">Unable to establish connection with server.Please try after sometime.</string>
+    <string name="error_msg">Something went wrong...</string>
+    <string name="loading">Items Loading...</string>
+    <string name="pb_title">Fetching Data</string>
+</resources>
