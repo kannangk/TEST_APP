@@ -220,6 +220,8 @@ public class HomePageActivity extends AppCompatActivity implements ItemClickCall
                     public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                         if (response.isSuccessful()) {
                             loadService(response.body());
+                        }else {
+                            showMsg(response.message());
                         }
                     }
 
